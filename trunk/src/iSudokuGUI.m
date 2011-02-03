@@ -1942,20 +1942,29 @@ function RandomBtn_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Generate a random matrix
-randMat = [magic(3), magic(3), magic(3); magic(3), magic(3), magic(3); magic(3), magic(3), magic(3)];
+% Get a sudoku game using a random number
+[num, cellMat]= xlsread('sudoku.xls', 'Games');
+randNum = ceil(12.*rand(1));
+srtTarg = ['S' num2str(randNum)];
+[cRowSize cColSize] = size(cellMat);
 
-%Fill-up the board using the random matrix
-for rowInd = 1: 9
+rowOffset = 1;
+for cRowInd = 1: cRowSize
+    if (strcmp(srtTarg, cellMat(cRowInd,1)) == 1)
+        rowOffset = cRowInd;
+        break;
+    end
+end
+
+%Fill-up the board using the game matrix
+for rowInd = 1:9
     for colInd = 1:9
-        %Get the handler for each cell in the matrix
         cName = ['c' num2str(rowInd) num2str(colInd)];
-        cValue = num2str(randMat(rowInd, colInd));
+        cValue = strtrim(cellMat{rowOffset+rowInd, colInd});
         expr = ['set(handles.' cName ', ''String'', ''' cValue ''')'];
         eval(expr);
     end
 end
-
 
 % --- Executes on button press in SolveBtn.
 function SolveBtn_Callback(hObject, eventdata, handles)
