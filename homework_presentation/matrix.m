@@ -35,7 +35,7 @@ end
 fprintf('The number of elements equal to the first element is %g.\n',count);
 
 
-%Check whether the matrix is a symmetrical
+%Check whether the matrix is symmetrical
 if x==x'
     fprintf('The matrix is symmetrical.\n');
 else fprintf('The matrix is not symmetrical.\n');
