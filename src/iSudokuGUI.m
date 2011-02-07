@@ -61,6 +61,9 @@ guidata(hObject, handles);
 % UIWAIT makes iSudokuGUI wait for user response (see UIRESUME)
 % uiwait(handles.figure1);
 
+% Read predefined games from the input spreadsheet
+[num, cellMat]= xlsread('sudoku.xls', 'Games');
+set(handles.RandomBtn,'UserData', cellMat);
 
 % --- Outputs from this function are returned to the command line.
 function varargout = iSudokuGUI_OutputFcn(hObject, eventdata, handles) 
@@ -1943,7 +1946,7 @@ function RandomBtn_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 % Get a sudoku game using a random number
-[num, cellMat]= xlsread('sudoku.xls', 'Games');
+cellMat = get(handles.RandomBtn,'UserData');
 randNum = ceil(12.*rand(1));
 srtTarg = ['S' num2str(randNum)];
 [cRowSize cColSize] = size(cellMat);
@@ -1961,16 +1964,66 @@ for rowInd = 1:9
     for colInd = 1:9
         cName = ['c' num2str(rowInd) num2str(colInd)];
         cValue = strtrim(cellMat{rowOffset+rowInd, colInd});
-        expr = ['set(handles.' cName ', ''String'', ''' cValue ''')'];
+        if strcmp(cValue, '')
+            expr = ['set(handles.' cName ', ''String'', ''' cValue ''', ''FontWeight'', ''normal'', ''Enable'', ''on'')'];
+        else
+            expr = ['set(handles.' cName ', ''String'', ''' cValue ''', ''FontWeight'', ''bold'', ''Enable'', ''inactive'')'];
+        end
         eval(expr);
     end
 end
+
+set(handles.SolveBtn, 'Enable', 'on');
+set(handles.ClearBtn, 'Enable', 'on');
 
 % --- Executes on button press in SolveBtn.
 function SolveBtn_Callback(hObject, eventdata, handles)
 % hObject    handle to SolveBtn (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+
+invalid = 0;
+solveMatrix = zeros(9,9);
+for rowInd = 1:9
+    for colInd = 1:9
+        cName = ['c' num2str(rowInd) num2str(colInd)];
+        expr = ['cValue = get(handles.' cName ', ''String'');'];        
+        eval(expr);
+       
+        
+        %Validate data correctness prior solving the game
+        %Only values from 1-9 should be entered, an empty cell is validq 
+        if (isempty(cValue) == 0)
+            if( isempty(str2num(cValue)) == 1)
+                msg = ['Non numeric value found at row: ' num2str(rowInd) ', column: ' num2str(colInd)];
+                h = msgbox(msg,'Error','error');
+                invalid = 1;
+                break;
+            elseif (length(cValue) ~= 1 ||...             
+                str2num(cValue) < 1 ||...
+                str2num(cValue) > 9 )
+                msg = ['Invalid input found at row: ' num2str(rowInd) ', column: ' num2str(colInd)];
+                h = msgbox(msg,'Error','error');
+                invalid = 1;
+                break;
+            end
+         
+            %Cell data is valid, add it to the matrix
+            solveMatrix(rowInd,colInd) = str2num(cValue);
+        else
+            %Change the empty cell to zero and add it to the matrix
+            solveMatrix(rowInd,colInd) = 0;
+        end
+        
+    end
+    
+    if (invalid == 1)
+        break;
+    end
+end
+        
+solveMatrix %remove this line
+
 
 
 % --- Executes on button press in ClearBtn.
@@ -1979,4 +2032,15 @@ function ClearBtn_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
+%Clear the board
+for rowInd = 1:9
+    for colInd = 1:9
+        cName = ['c' num2str(rowInd) num2str(colInd)];
+        cValue = '';
+        expr = ['set(handles.' cName ', ''String'', ''' cValue ''', ''FontWeight'', ''normal'', ''Enable'', ''on'')'];
+        eval(expr);
+    end
+end
 
+set(handles.SolveBtn, 'Enable', 'off');
+set(handles.ClearBtn, 'Enable', 'off');
