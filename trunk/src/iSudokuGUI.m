@@ -59,7 +59,6 @@ handles.output = hObject;
 guidata(hObject, handles);
 
 % UIWAIT makes iSudokuGUI wait for user response (see UIRESUME)
-% uiwait(handles.figure1);
 
 % Read predefined games from the input spreadsheet
 [num, cellMat]= xlsread('sudoku.xls', 'Games');
@@ -1965,9 +1964,9 @@ for rowInd = 1:9
         cName = ['c' num2str(rowInd) num2str(colInd)];
         cValue = strtrim(cellMat{rowOffset+rowInd, colInd});
         if strcmp(cValue, '')
-            expr = ['set(handles.' cName ', ''String'', ''' cValue ''', ''FontWeight'', ''normal'', ''Enable'', ''on'')'];
+            expr = ['set(handles.' cName ', ''String'', ''' cValue ''', ''FontWeight'', ''normal'', ''Enable'', ''on'', ''ForegroundColor'', [' num2str([0 0 0]) '])'];
         else
-            expr = ['set(handles.' cName ', ''String'', ''' cValue ''', ''FontWeight'', ''bold'', ''Enable'', ''inactive'')'];
+            expr = ['set(handles.' cName ', ''String'', ''' cValue ''', ''FontWeight'', ''bold'', ''Enable'', ''inactive'', ''ForegroundColor'', [' num2str([0 0 0]) '])'];
         end
         eval(expr);
     end
@@ -1983,13 +1982,14 @@ function SolveBtn_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 invalid = 0;
-solveMatrix = zeros(9,9);
+toSolveMatrix = zeros(9,9);
+hintMatrix = zeros(9,9); % This matrix holds the position of the hints 
+                         % or given numbers before solving the game
 for rowInd = 1:9
     for colInd = 1:9
         cName = ['c' num2str(rowInd) num2str(colInd)];
         expr = ['cValue = get(handles.' cName ', ''String'');'];        
         eval(expr);
-       
         
         %Validate data correctness prior solving the game
         %Only values from 1-9 should be entered, an empty cell is validq 
@@ -2009,10 +2009,11 @@ for rowInd = 1:9
             end
          
             %Cell data is valid, add it to the matrix
-            solveMatrix(rowInd,colInd) = str2num(cValue);
+            toSolveMatrix(rowInd,colInd) = str2num(cValue);
+            hintMatrix(rowInd,colInd) = 1;
         else
             %Change the empty cell to zero and add it to the matrix
-            solveMatrix(rowInd,colInd) = 0;
+            toSolveMatrix(rowInd,colInd) = 0;
         end
         
     end
@@ -2021,9 +2022,49 @@ for rowInd = 1:9
         break;
     end
 end
-        
-solveMatrix %remove this line
 
+% At this point toSolveMatrix holds the Sudoku game that needs to be
+% solved automatically.
+
+solvedMatrix = iSudokuAlg(toSolveMatrix, hintMatrix);
+
+% Now it's time to populate the GUI with the solution obtained from
+% the solving algorithm:
+
+for rowInd = 1:9
+    for colInd = 1:9
+        cName = ['c' num2str(rowInd) num2str(colInd)];
+        cValue = num2str(solvedMatrix(rowInd, colInd));
+        if (hintMatrix(rowInd,colInd) == 1)
+            % This position corresponds to a hint
+            expr = ['set(handles.' cName ', ''String'', ''' cValue ''')'];
+        else
+            % This position is part of the solution
+            expr = ['set(handles.' cName ', ''String'', ''' cValue ''', ''ForegroundColor'', [' num2str([1 0 0]) '], ''Enable'', ''inactive'')'];
+        end
+        eval(expr);
+    end
+end
+%set(handles.SolveBtn, 'Enable', 'off');
+
+%--------------------------------------------------------------------------
+% This is just a dummy function that simulates the sudoku solver. This
+% function needs to be substituted with the real solver
+function outputMatrix = iSudokuAlg(inputMatrix, hintMatrix)
+
+outputMatrix = zeros(9,9);
+for rowInd = 1:9
+    for colInd = 1:9
+        if(hintMatrix(rowInd,colInd) == 1)
+            %hint
+            outputMatrix(rowInd,colInd) = inputMatrix (rowInd,colInd);
+        else
+            %"Solve"
+            outputMatrix(rowInd,colInd) = ceil(9.*rand(1));
+        end
+    end
+end
+%--------------------------------------------------------------------------
 
 
 % --- Executes on button press in ClearBtn.
@@ -2043,4 +2084,3 @@ for rowInd = 1:9
 end
 
 set(handles.SolveBtn, 'Enable', 'off');
-set(handles.ClearBtn, 'Enable', 'off');
