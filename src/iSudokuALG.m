@@ -22,6 +22,7 @@ for i=1:9
 end
 
 for count=1:20
+    C=B;
 for i=1:9
     for j=1:9
         if (A(i,j)+B(i,j))==0 
@@ -41,6 +42,25 @@ for i=1:9
         
     end 
 end
+if B==C
+    for i=1:9
+        for j=1:9
+            if (A(i,j)+B(i,j))==0
+                for k=1:9
+                    B(i,j)=k;
+                    flag2=verific(A+B);
+                    if flag2==0
+                    	B(i,j)==k;
+                        break
+                    end
+                end
+            end
+            
+        end
+    end
+end
+                
+    
 end  
 A=A+B
 [flag3]=verific(A);
