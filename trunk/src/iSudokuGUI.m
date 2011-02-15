@@ -2026,7 +2026,7 @@ end
 % At this point toSolveMatrix holds the Sudoku game that needs to be
 % solved automatically.
 
-solvedMatrix = iSudokuAlg(toSolveMatrix, hintMatrix);
+solvedMatrix = iSudokuAlg(toSolveMatrix);
 
 % Now it's time to populate the GUI with the solution obtained from
 % the solving algorithm:
@@ -2050,20 +2050,20 @@ end
 %--------------------------------------------------------------------------
 % This is just a dummy function that simulates the sudoku solver. This
 % function needs to be substituted with the real solver
-function outputMatrix = iSudokuAlg(inputMatrix, hintMatrix)
-
-outputMatrix = zeros(9,9);
-for rowInd = 1:9
-    for colInd = 1:9
-        if(hintMatrix(rowInd,colInd) == 1)
-            %hint
-            outputMatrix(rowInd,colInd) = inputMatrix (rowInd,colInd);
-        else
-            %"Solve"
-            outputMatrix(rowInd,colInd) = ceil(9.*rand(1));
-        end
-    end
-end
+% function outputMatrix = iSudokuAlg(inputMatrix, hintMatrix)
+% 
+% outputMatrix = zeros(9,9);
+% for rowInd = 1:9
+%     for colInd = 1:9
+%         if(hintMatrix(rowInd,colInd) == 1)
+%             %hint
+%             outputMatrix(rowInd,colInd) = inputMatrix (rowInd,colInd);
+%         else
+%             %"Solve"
+%             outputMatrix(rowInd,colInd) = ceil(9.*rand(1));
+%         end
+%     end
+% end
 %--------------------------------------------------------------------------
 
 
