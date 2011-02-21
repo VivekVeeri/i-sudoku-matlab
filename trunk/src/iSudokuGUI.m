@@ -2026,7 +2026,7 @@ end
 % At this point toSolveMatrix holds the Sudoku game that needs to be
 % solved automatically.
 
-solvedMatrix = iSudokuAlg(toSolveMatrix);
+solvedMatrix = iSudokuALG(toSolveMatrix);
 
 % Now it's time to populate the GUI with the solution obtained from
 % the solving algorithm:
