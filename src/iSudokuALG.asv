@@ -21,7 +21,7 @@ for i=1:9
     end
 end
 
-for count=1:81
+for count=1:40
 C=B;
 for i=1:9
     for j=1:9
@@ -37,7 +37,6 @@ for i=1:9
             B(i,j)=0;
             if length(possible)==1
                 B(i,j)=possible;
-                fprintf('I put the value %d in A(%d,%d).\n', B(i,j), i, j);
             end
         end
         
@@ -45,28 +44,27 @@ for i=1:9
 end
 if C==B
     count2=0;
-    x=1;
-    y=1;
+    i=1;
+    j=1;
     while (count2==0)
-        if (A(x,y)+B(x,y))==0 
+        if (A(i,j)+B(i,j))==0 
             for k=1:9
-                B(x,y)=k;
+                B(i,j)=k;
                 flag3=verific(A+B);
                 if flag3==0
                     count2=1;
-                    fprintf('I put the value %d in A(%d,%d).\n', B(x,y), x, y);
-                    break
                 else
-                    B(x,y)=0;
+                    B(i,j)=0;
                 end
             end
+            if(i<9) i=i+1;
+            else i=1; j=j+1;
+            end     
+        else 
+            if(i<9) i=i+1;
+            else i=1; j=j+1;
+            end      
         end
-        
-        if(x<9) x=x+1;
-        elseif (y<9)x=1; y=y+1; 
-        else break
-        end
-
     end
 end
 end  
