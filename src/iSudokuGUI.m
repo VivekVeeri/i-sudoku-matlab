@@ -22,7 +22,7 @@ function varargout = iSudokuGUI(varargin)
 
 % Edit the above text to modify the response to help iSudokuGUI
 
-% Last Modified by GUIDE v2.5 21-Feb-2011 22:51:50
+% Last Modified by GUIDE v2.5 23-Feb-2011 23:01:41
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -73,8 +73,6 @@ function varargout = iSudokuGUI_OutputFcn(hObject, eventdata, handles)
 
 % Get default command line output from handles structure
 varargout{1} = handles.output;
-
-
 
 function c11_Callback(hObject, eventdata, handles)
 % hObject    handle to c11 (see GCBO)
@@ -1946,7 +1944,7 @@ function RandomBtn_Callback(hObject, eventdata, handles)
 
 % Get a sudoku game using a random number
 cellMat = get(handles.RandomBtn,'UserData');
-randNum = ceil(12.*rand(1));
+randNum = ceil(20.*rand(1));
 srtTarg = ['S' num2str(randNum)];
 [cRowSize cColSize] = size(cellMat);
 
@@ -2009,27 +2007,6 @@ if (validMatrix == 1)
         end
     end
 end
-%set(handles.SolveBtn, 'Enable', 'off');
-
-%--------------------------------------------------------------------------
-% This is just a dummy function that simulates the sudoku solver. This
-% function needs to be substituted with the real solver
-% function outputMatrix = iSudokuAlg(inputMatrix, hintMatrix)
-% 
-% outputMatrix = zeros(9,9);
-% for rowInd = 1:9
-%     for colInd = 1:9
-%         if(hintMatrix(rowInd,colInd) == 1)
-%             %hint
-%             outputMatrix(rowInd,colInd) = inputMatrix (rowInd,colInd);
-%         else
-%             %"Solve"
-%             outputMatrix(rowInd,colInd) = ceil(9.*rand(1));
-%         end
-%     end
-% end
-%--------------------------------------------------------------------------
-
 
 % --- Executes on button press in ClearBtn.
 function ClearBtn_Callback(hObject, eventdata, handles)
@@ -2130,4 +2107,29 @@ for rowInd = 1:9
         break;
     end
 end
+
+
+
+
+function gameNum_Callback(hObject, eventdata, handles)
+% hObject    handle to gameNum (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of gameNum as text
+%        str2double(get(hObject,'String')) returns contents of gameNum as a double
+
+
+% --- Executes during object creation, after setting all properties.
+function gameNum_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to gameNum (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
 
