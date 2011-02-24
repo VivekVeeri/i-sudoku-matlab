@@ -1,27 +1,13 @@
+% File: iSudokuGUI.m
+% Description: This file implements the graphical user interface for the
+% iSudoku solver. The user interface consists of 81 text boxes to represent
+% the 9 by 9 sudoku board, 1 label fot the GUI title (iSudoku) and 4
+% buttons: Random, Verify, Solve and Clear.
+% Author(s): Andrea Garcia, Ivan Castro
+% Mail(s): aga09001@student.mdh.se, ico09002@student.mdh.se
+% Group number: A-3
+
 function varargout = iSudokuGUI(varargin)
-% ISUDOKUGUI M-file for iSudokuGUI.fig
-%      ISUDOKUGUI, by itself, creates a new ISUDOKUGUI or raises the existing
-%      singleton*.
-%
-%      H = ISUDOKUGUI returns the handle to a new ISUDOKUGUI or the handle to
-%      the existing singleton*.
-%
-%      ISUDOKUGUI('CALLBACK',hObject,eventData,handles,...) calls the local
-%      function named CALLBACK in ISUDOKUGUI.M with the given input arguments.
-%
-%      ISUDOKUGUI('Property','Value',...) creates a new ISUDOKUGUI or raises the
-%      existing singleton*.  Starting from the left, property value pairs are
-%      applied to the GUI before iSudokuGUI_OpeningFunction gets called.  An
-%      unrecognized property name or invalid value makes property application
-%      stop.  All inputs are passed to iSudokuGUI_OpeningFcn via varargin.
-%
-%      *See GUI Options on GUIDE's Tools menu.  Choose "GUI allows only one
-%      instance to run (singleton)".
-%
-% See also: GUIDE, GUIDATA, GUIHANDLES
-
-% Edit the above text to modify the response to help iSudokuGUI
-
 % Last Modified by GUIDE v2.5 23-Feb-2011 23:01:41
 
 % Begin initialization code - DO NOT EDIT
@@ -43,7 +29,6 @@ else
 end
 % End initialization code - DO NOT EDIT
 
-
 % --- Executes just before iSudokuGUI is made visible.
 function iSudokuGUI_OpeningFcn(hObject, eventdata, handles, varargin)
 % This function has no output args, see OutputFcn.
@@ -64,6 +49,7 @@ guidata(hObject, handles);
 [num, cellMat]= xlsread('sudoku.xls', 'Games');
 set(handles.RandomBtn,'UserData', cellMat);
 
+%---------------------------------------------------------------------
 % --- Outputs from this function are returned to the command line.
 function varargout = iSudokuGUI_OutputFcn(hObject, eventdata, handles) 
 % varargout  cell array for returning output args (see VARARGOUT);
@@ -74,7 +60,12 @@ function varargout = iSudokuGUI_OutputFcn(hObject, eventdata, handles)
 % Get default command line output from handles structure
 varargout{1} = handles.output;
 
-% --- Executes on button press in RandomBtn.
+%----------------------------------------------------------------------
+% Executes on button press in RandomBtn.
+% This button is in charge of generating a random dudoku game and display
+% it in the user interface. This button also enables the "verify", "solve"
+% and "clear" button.
+%----------------------------------------------------------------------
 function RandomBtn_Callback(hObject, eventdata, handles)
 % hObject    handle to RandomBtn (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
@@ -86,6 +77,7 @@ randNum = ceil(20.*rand(1));
 srtTarg = ['S' num2str(randNum)];
 [cRowSize cColSize] = size(cellMat);
 
+% Find the random game in from the database
 rowOffset = 1;
 for cRowInd = 1: cRowSize
     if (strcmp(srtTarg, cellMat(cRowInd,1)) == 1)
@@ -99,6 +91,7 @@ for rowInd = 1:9
     for colInd = 1:9
         cName = ['c' num2str(rowInd) num2str(colInd)];
         cValue = strtrim(cellMat{rowOffset+rowInd, colInd});
+        % Set a number in the appropriate position in the board
         if strcmp(cValue, '')
             expr = ['set(handles.' cName ', ''String'', ''' cValue ''', ''FontWeight'', ''normal'', ''Enable'', ''on'', ''ForegroundColor'', [' num2str([0 0 0]) '])'];
         else
@@ -108,11 +101,17 @@ for rowInd = 1:9
     end
 end
 
+% Enable the solve, verify and clear buttons
 set(handles.SolveBtn, 'Enable', 'on');
 set(handles.ClearBtn, 'Enable', 'on');
 set(handles.verifyBtn, 'Enable', 'on');
 
-% --- Executes on button press in SolveBtn.
+
+%----------------------------------------------------------------------
+% Executes on button press in SolveBtn.
+% This button is in charge of solving the sudoku game displayed on the user
+% interface using the iSudokuAlg function.
+%----------------------------------------------------------------------
 function SolveBtn_Callback(hObject, eventdata, handles)
 % hObject    handle to SolveBtn (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
@@ -121,32 +120,43 @@ function SolveBtn_Callback(hObject, eventdata, handles)
 % First Read the board:
 [validMatrix toSolveMatrix hintMatrix] = readBoard(handles);
 
-% At this point toSolveMatrix holds the Sudoku game that needs to be
+% At this point "toSolveMatrix" holds the Sudoku game that needs to be
 % solved automatically.
 
-if (validMatrix == 1)
-    solvedMatrix = iSudokuALG(toSolveMatrix);
-
-    % Now it's time to populate the GUI with the solution obtained from
-    % the solving algorithm:
-
-    for rowInd = 1:9
-        for colInd = 1:9
-            cName = ['c' num2str(rowInd) num2str(colInd)];
-            cValue = num2str(solvedMatrix(rowInd, colInd));
-            if (hintMatrix(rowInd,colInd) == 1)
-                % This position corresponds to a hint
-                expr = ['set(handles.' cName ', ''String'', ''' cValue ''')'];
-            else
-                % This position is part of the solution
-                expr = ['set(handles.' cName ', ''String'', ''' cValue ''', ''ForegroundColor'', [' num2str([1 0 0]) '], ''Enable'', ''inactive'')'];
+if (validMatrix == 1) % % The board has only valid characters (1-9)
+    % Verify that the solution / partial solution is correct
+    incorrectGame = verific(toSolveMatrix);
+    if (incorrectGame == 0)
+        % Solve the Game using the iSudokuAlg function:
+        solvedMatrix = iSudokuALG(toSolveMatrix);
+        % Populate the GUI with the solution obtained from
+        % the solving algorithm:
+        for rowInd = 1:9
+            for colInd = 1:9
+                cName = ['c' num2str(rowInd) num2str(colInd)];
+                cValue = num2str(solvedMatrix(rowInd, colInd));
+                if (hintMatrix(rowInd,colInd) == 1)
+                    % This position corresponds to a hint
+                    expr = ['set(handles.' cName ', ''String'', ''' cValue ''')'];
+                else
+                    % This position is part of the solution
+                    expr = ['set(handles.' cName ', ''String'', ''' cValue ''', ''ForegroundColor'', [' num2str([1 0 0]) '], ''Enable'', ''inactive'')'];
+                end
+                eval(expr);
             end
-            eval(expr);
         end
+    else
+        % The current game is incorrect, display an error message.
+        msg = 'Invalid Game!';
+        h = msgbox(msg,'Error','error', 'replace');
     end
 end
 
-% --- Executes on button press in ClearBtn.
+%----------------------------------------------------------------------
+% Executes on button press in ClearBtn.
+% This button just clears the board and resets the solve button and the
+% verify button to their default state, disabled.
+%----------------------------------------------------------------------
 function ClearBtn_Callback(hObject, eventdata, handles)
 % hObject    handle to ClearBtn (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
@@ -161,11 +171,16 @@ for rowInd = 1:9
         eval(expr);
     end
 end
-
+% Disable the Solve and Verify buttons:
 set(handles.SolveBtn, 'Enable', 'off');
 set(handles.verifyBtn, 'Enable', 'off');
 
-% --- Executes on button press in verifyBtn.
+%----------------------------------------------------------------------
+% Executes on button press in verifyBtn.
+% This button verifies that the solution (partial or complete) displayed on
+% the board is correct. If it is correct, a pop-up window will display that
+% the solution is correct. Otherwise it will display an error message.
+%----------------------------------------------------------------------
 function verifyBtn_Callback(hObject, eventdata, handles)
 % hObject    handle to verifyBtn (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
@@ -199,9 +214,11 @@ if (validMatrix == 1)
     end
 end
         
-
+%----------------------------------------------------------------------
 % This function reads the board and generates a numeric matrix with the
-% game and a hint matrix
+% game and a hint matrix. This function is used by both the solve and the
+% verify buttons
+%----------------------------------------------------------------------
 function [valid toSolveMatrix hintMatrix] = readBoard(handles)
 
 valid = 1;
