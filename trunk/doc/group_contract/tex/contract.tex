@@ -4,6 +4,7 @@
 \usepackage{cite}
 \usepackage{color}
 \usepackage{listings}
+\usepackage{hyperref}
 \lstset{ %
 language=C++, % choose the language of the code
 basicstyle=\footnotesize, % the size of the fonts that are used for the code
@@ -109,6 +110,22 @@ Ivan Francisco Castro Ceron \hrulefill
 \mbox{}
 \newline
 Eduard Paul Enoiu  \hrulefill
+\newpage
+
+\title{February 28, 2011}
+\section{Annex 1 - Group meetings activity}
+\begin{center}
+\begin{tabular}{ | l | l | p{8cm} |}
+\hline
+Meeting & Date & Agenda\\ \hline
+1 & February 1 & We have divided the work. We have analyzed how to solve Sudoku puzzles. Also Andrea and Ivan began working for the GUI. They presented the first version of the GUI with no functionality. Also we have decided to work with the SVN system repository in order to have a source code versioning control: \url{https://i-sudoku-matlab.googlecode.com/svn/trunk/} \\ \hline
+2 & February 8 & Raluca and Eduard Presented a first version of the algorithm for verification purposes. The algorithm was tested only in the command line version. Andrea and Ivan presented an improved version of the GUI. \\ \hline
+3 & February 15 &  Andrea and Ivan improved the GUI with xls support for automatic puzzle addition. Raluca and Eduard  modified the algorithm in order to solve more complicated puzzles. We have encounter mistakes in the algorithm code and Raluca started to refine the implementation.\\ \hline
+3+(Extra meeting) & February 22 & In this meeting we have refined the implementation. Ivan and Andrea added more Sudoku puzzles for testing purposes. Everything is working fine and we have started working for our Seminar 1 presentation.\\ \hline
+\end{tabular}
+%\caption{Execution time for different learning tests}
+\end{center}
+
 \end{document}
 \section{Introduction}
 Autonomous mobile robots have been extensively studied not only as an element of industrial and home automation, but also as a test bed in Robocup \cite{DBLP:conf/robocup/1997} competitions to academically establish the achievement of artificial intelligence. One of the essential and critical research areas in autonomous robotics is the learning ability which supports robots to autonomously navigate and adapt to a given environment without human guidance. Reinforcement Learning (RL) is a machine learning technique that defines a certain scenario, where a robot attempts to improve its behaviour by taking actions and receiving rewards or punishments. Because RL enables an $agent$\footnote{We will use in this report the term $agent$ when refering to the robot's model used in RL algorithm} to learn autonomously from its own environment and experience, it is a well suited framework for learning control policies for mobile robots.
