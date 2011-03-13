@@ -1,0 +1,54 @@
+\begin{thebibliography}{1}
+
+\bibitem{bartlett2006integer}
+A.C. Bartlett and A.N. Langville.
+\newblock {An integer programming model for the Sudoku problem}.
+\newblock {\em Preprint, available at http://www. cofc. edu/\~{}
+  langvillea/Sudoku/sudoku2. pdf}, 2006.
+
+\bibitem{crook2009pencil}
+JF~Crook.
+\newblock {A pencil-and-paper algorithm for solving Sudoku puzzles}.
+\newblock {\em Notices of the AMS}, 56(4):460--468, 2009.
+
+\bibitem{geem2008harmony}
+Z.~Geem.
+\newblock {Harmony search applications in industry}.
+\newblock {\em Soft Computing Applications in Industry}, pages 117--134, 2008.
+
+\bibitem{green2009survey}
+R.C. Green~II.
+\newblock {Survey of the Applications of Artificial Intelligence Techniques to
+  the Sudoku Puzzle}.
+\newblock 2009.
+
+\bibitem{jones2008construction}
+SK~Jones, PA~Roach, and S.~Perkins.
+\newblock {Construction of heuristics for a search-based approach to solving
+  Sudoku}.
+\newblock {\em Research and Development in Intelligent Systems XXIV}, pages
+  37--49, 2008.
+
+\bibitem{mantere2007solving}
+T.~Mantere and J.~Koljonen.
+\newblock {Solving, rating and generating Sudoku puzzles with GA}.
+\newblock In {\em Evolutionary Computation, 2007. CEC 2007. IEEE Congress on},
+  pages 1382--1389. Ieee.
+
+\bibitem{norvigsolving}
+P.~Norvig.
+\newblock {Solving every sudoku puzzle}.
+\newblock {\em Preprint}.
+
+\bibitem{santos2007solving}
+G.~Santos-Garcia and M.~Palomino.
+\newblock {Solving Sudoku puzzles with rewriting rules}.
+\newblock {\em Electronic Notes in Theoretical Computer Science},
+  176(4):79--93, 2007.
+
+\bibitem{yue2006sudoku}
+T.W. Yue and Z.C. Lee.
+\newblock {Sudoku Solver by Q’tron Neural Networks}.
+\newblock {\em Intelligent Computing}, pages 943--952, 2006.
+
+\end{thebibliography}
