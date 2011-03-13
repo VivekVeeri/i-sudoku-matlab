@@ -1,0 +1,7 @@
+\contentsline {figure}{\numberline {1}{\ignorespaces Algorithm Exemplification by using a simple example }}{5}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {A Shidoku puzzle}}}{5}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {The possible candidates for all squares}}}{5}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Inserting value 2 and constraint propagation}}}{5}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Constraint propagation}}}{5}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {Insert the remaining values to complete the puzzle}}}{5}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {The puzzle completed}}}{5}

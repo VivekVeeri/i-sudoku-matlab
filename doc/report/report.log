@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2011.3.6)  13 MAR 2011 17:19
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2011.3.6)  13 MAR 2011 18:25
 entering extended mode
 **report.tex
 
@@ -442,18 +442,18 @@ LaTeX Info: Redefining \] on input line 2667.
 )
 ("C:\Users\Eduard\Documents\My Dropbox\mdh_s5\matlab\project\svn\doc\report\rep
 ort.aux")
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
  ("C:\Program Files\MiKTeX 2.8\tex\context\base\supp-pdf.tex"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count116
@@ -468,76 +468,93 @@ LaTeX Font Info:    ... okay on input line 44.
 \everyMPtoPDFconversion=\toks24
 )
 \c@lstlisting=\count121
+LaTeX Font Info:    Try loading font information for OMS+cmss on input line 47.
 
-Overfull \hbox (7.43024pt too wide) in paragraph at lines 45--45
- [][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 51--60
-
- []
+LaTeX Font Info:    No file OMScmss.fd. on input line 47.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 51--60
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 51--60
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 51--60
-
- []
+LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbraceleft' on input line 47.
 
 [1
 
 {C:/Users/Eduard/AppData/Local/MiKTeX/2.8/pdftex/config/pdftex.map}]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 65.
+("C:\Users\Eduard\Documents\My Dropbox\mdh_s5\matlab\project\svn\doc\report\rep
+ort.toc")
+\tf@toc=\write3
+ [2]
+Underfull \hbox (badness 10000) in paragraph at lines 54--59
 
-("C:\Program Files\MiKTeX 2.8\tex\latex\base\omscmr.fd"
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 54--59
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--69
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--69
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--69
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--69
+
+ []
+
+[3]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 74.
+ ("C:\Program Files\MiKTeX 2.8\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 65.
-
-<pictures/1.png, id=9, 161.85469pt x 136.25906pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 74.
+ [4]
+<pictures/1.png, id=22, 161.85469pt x 136.25906pt>
 File: pictures/1.png Graphic file (type png)
  <use pictures/1.png>
-<pictures/2.png, id=10, 161.85469pt x 136.25906pt>
+<pictures/2.png, id=23, 161.85469pt x 136.25906pt>
 File: pictures/2.png Graphic file (type png)
  <use pictures/2.png>
-<pictures/3.png, id=11, 161.85469pt x 136.25906pt>
+<pictures/3.png, id=24, 161.85469pt x 136.25906pt>
 File: pictures/3.png Graphic file (type png)
  <use pictures/3.png>
-<pictures/4.png, id=12, 161.85469pt x 136.25906pt>
+<pictures/4.png, id=25, 161.85469pt x 136.25906pt>
 File: pictures/4.png Graphic file (type png)
  <use pictures/4.png>
-<pictures/5.png, id=13, 161.85469pt x 136.25906pt>
+<pictures/5.png, id=26, 161.85469pt x 136.25906pt>
 File: pictures/5.png Graphic file (type png)
  <use pictures/5.png>
-Underfull \hbox (badness 1057) in paragraph at lines 101--101
+Underfull \hbox (badness 1057) in paragraph at lines 110--110
 []\OT1/cmr/m/n/10 (e) In-sert the re-main-ing val-ues to
  []
 
-<pictures/6.png, id=14, 164.86594pt x 138.5175pt>
+<pictures/6.png, id=27, 164.86594pt x 138.5175pt>
 File: pictures/6.png Graphic file (type png)
  <use pictures/6.png>
-Underfull \hbox (badness 10000) in paragraph at lines 75--114
+Underfull \hbox (badness 10000) in paragraph at lines 84--123
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 75--114
+Underfull \hbox (badness 10000) in paragraph at lines 84--123
 
  []
 
-[2]
+
 ("C:\Users\Eduard\Documents\My Dropbox\mdh_s5\matlab\project\svn\doc\report\rep
-ort.bbl" [3] [4 <C:/Users/Eduard/Documents/My Dropbox/mdh_s5/matlab/project/svn
+ort.bbl" [5] [6 <C:/Users/Eduard/Documents/My Dropbox/mdh_s5/matlab/project/svn
 /doc/report/pictures/1.png (PNG copy)> <C:/Users/Eduard/Documents/My Dropbox/md
 h_s5/matlab/project/svn/doc/report/pictures/2.png (PNG copy)> <C:/Users/Eduard/
 Documents/My Dropbox/mdh_s5/matlab/project/svn/doc/report/pictures/3.png (PNG c
@@ -545,27 +562,33 @@ opy)> <C:/Users/Eduard/Documents/My Dropbox/mdh_s5/matlab/project/svn/doc/repor
 t/pictures/4.png (PNG copy)> <C:/Users/Eduard/Documents/My Dropbox/mdh_s5/matla
 b/project/svn/doc/report/pictures/5.png (PNG copy)> <C:/Users/Eduard/Documents/
 My Dropbox/mdh_s5/matlab/project/svn/doc/report/pictures/6.png (PNG copy)>])
-[5]
+[7]
 ("C:\Users\Eduard\Documents\My Dropbox\mdh_s5\matlab\project\svn\doc\report\rep
-ort.aux") ) 
+ort.aux")
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+ ) 
 Here is how much of TeX's memory you used:
- 4621 strings out of 495285
- 61298 string characters out of 3180392
- 156235 words of memory out of 3000000
- 7782 multiletter control sequences out of 15000+200000
- 7726 words of font info for 28 fonts, out of 3000000 for 9000
+ 4655 strings out of 495285
+ 61815 string characters out of 3180392
+ 155235 words of memory out of 3000000
+ 7803 multiletter control sequences out of 15000+200000
+ 11729 words of font info for 42 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  33i,8n,58p,1403b,311s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmbx10.p
-fb><C:/Program Files/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/P
-rogram Files/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Fi
-les/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTe
-X 2.8/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.8/fon
-ts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.8/fonts/type1
-/public/amsfonts/cm/cmti12.pfb>
-Output written on report.pdf (5 pages, 149915 bytes).
+<C:/Program Files/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
+ogram Files/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
+les/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTe
+X 2.8/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.8/fon
+ts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.8/fonts/type1/p
+ublic/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.8/fonts/type1/public/amsf
+onts/cm/cmss12.pfb><C:/Program Files/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/
+cmsy10.pfb><C:/Program Files/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmti12.p
+fb>
+Output written on report.pdf (7 pages, 169038 bytes).
 PDF statistics:
- 52 PDF objects out of 1000 (max. 8388607)
+ 68 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
