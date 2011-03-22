@@ -148,15 +148,15 @@ In order to have different games to be solved by the program an Excel database w
 \subsection{An Algorithm for Solving Sudoku Puzzles}
 The algorithm was implemented in MATLAB using direct puzzle search and constraint propagation. The constraint propagation was implemented in such a manner that: 
 \begin{itemize}
-\item When a value is assigned to a square that same value cannot be used as a possible assignment in all related squares;
-\item If a square has only one single value for possible assignment, that value is immediately assigned.
+\item When a value is assigned to a square that same value cannot be used as a possible assignment in all related cells;
+\item If a cell has only one single value for possible assignment, that value is immediately assigned.
 \end{itemize}
 Our MATLAB program has only 4 steps:
 \begin{enumerate}
 \item Find all the possible values for all empty cells;
-\item Assign a value to a square on the grid;
-\item Propagate constraints to other square;
-\item If all the cells have more than one possible value we fill in a tentative value for one cell.
+\item If there is a single possible value, we assign that value to the cell;
+\item Propagate constraints to other cells;
+\item If all the cells have more than one possible value we fill in a tentative value for that cell.
 \end{enumerate}
 This algorithm, though it is simplistic, it should perform fairly well  because of the algorithm's nature, as described in \cite{norvigsolving}. The process is performed by $iSudokuALG$ function. This function receives as an input parameter the cell matrix $A$ and gives as output a solved puzzle in the form of a matrix. This is represented by
 \begin{verbatim}
