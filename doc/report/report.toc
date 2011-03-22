@@ -4,7 +4,7 @@
 \contentsline {subsection}{\numberline {3.1}Graphical User Interface}{4}
 \contentsline {subsubsection}{\numberline {3.1.1}Sudoku GUI}{5}
 \contentsline {subsubsection}{\numberline {3.1.2}Game Database}{8}
-\contentsline {subsection}{\numberline {3.2}An Algorithm for Solving Sudoku Puzzles}{8}
+\contentsline {subsection}{\numberline {3.2}An Algorithm for Solving Sudoku Puzzles}{9}
 \contentsline {section}{\numberline {4}Experimental Results}{11}
 \contentsline {subsection}{\numberline {4.1}User Interface Testing}{11}
 \contentsline {subsection}{\numberline {4.2}Algorithm Testing}{12}
