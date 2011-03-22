@@ -6,4 +6,6 @@
 \contentsline {subsubsection}{\numberline {3.1.2}Game Database}{8}
 \contentsline {subsection}{\numberline {3.2}An Algorithm for Solving Sudoku Puzzles}{8}
 \contentsline {section}{\numberline {4}Experimental Results}{9}
+\contentsline {subsection}{\numberline {4.1}User Interface Testing}{9}
+\contentsline {subsection}{\numberline {4.2}Algorithm}{9}
 \contentsline {section}{\numberline {5}Conclusions}{9}
