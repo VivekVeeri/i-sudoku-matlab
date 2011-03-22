@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{bartlett2006integer}
 A.C. Bartlett and A.N. Langville.
@@ -34,6 +34,12 @@ T.~Mantere and J.~Koljonen.
 \newblock {Solving, rating and generating Sudoku puzzles with GA}.
 \newblock In {\em Evolutionary Computation, 2007. CEC 2007. IEEE Congress on},
   pages 1382--1389. Ieee.
+
+\bibitem{Mathworks:2011:Online}
+Mathworks.
+\newblock Creating graphical user interfaces
+  http://www.mathworks.com/help/techdoc/creating\_guis/bqz79mu.html, March
+  2011.
 
 \bibitem{norvigsolving}
 P.~Norvig.
