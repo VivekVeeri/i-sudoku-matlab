@@ -46,6 +46,9 @@ escapeinside={\%}{)} % if you want to add a comment within your code
 \begin{document} % start of the document
 \maketitle % makes the title page
 \begin{abstract}
+Sudoku puzzles appear in magazines, newspapers, web pages and even books on a daily basis. In fact, millions of people around the world know how to play Sudoku. However, the science behind this game is much more complex than it looks. That is why many researchers have put a notable amount of effort to generate efficient algorithms to solve these puzzles. Some researchers might even suggest that an algorithm to solve Sudoku games without trying a large amount of permutations does not exist.\newline
+\\This paper describes the development and implementation of a Sudoku solver using MATLAB. Furthermore, this document includes detailed directions about the creation of a graphical user interface and the implementation of a constraint-propagation algorithm to complete Sudoku puzzles interactively.
+
 \end{abstract}
 \newpage
 \tableofcontents
@@ -67,7 +70,81 @@ Sudoku puzzles can be viewed as a interesting problem for different fields of ma
 \newline
 \\ We have decided to solve the puzzles using backtracking as in \cite{norvigsolving} because of the simplicity and performance mentioned by Norvig in his paper. We will present in the next section our own version of the algorithm using recursive backtracking and constraint propagation implemented in MATLAB.
 \section{Implementation}
-\subsection{GUI Design}
+%------------------------GUI start---------------------------------------
+\subsection{Graphical User Interface}
+A graphical user interface (GUI) is a collection of visual components that allows the user to interact with a computer program. The usage of buttons or similar components, facilitate the interaction with an application without knowing the underlying program.  In contrast, in a command-line based application the user needs to type instructions to perform a task \cite{Mathworks:2011:Online}
+\newline
+\\The implementation of the GUI for this project was done using MATLAB’s Graphical User Interface Environment (GUIDE). This environment allows the creation of different layouts by means of drag and drop components. Each component has one or more \textit{callback functions} whose purpose is to execute a set of instructions based on the user’s input. An example of this type of functions can be a key press or a mouse click.
+\newline
+\\Additionally, each component comprises a list of properties that can be edited in order to modify its appearance. For example, one can edit a component’s color, size and position on the layout. In fact, one of the main purposes of the callback functions is to update the component’s properties.
+
+\subsubsection{Sudoku GUI}
+There are various components that can be used, such as textboxes, push buttons and menus among others. However, for the development of this project only a few different components were used in order to create the GUI of the Sudoku solver.
+\begin{figure}[h!]
+\centering
+\includegraphics[scale = 0.7]{pictures/board1}
+\caption{Sudoku GUI at initial state}
+\label{fig:board1}
+\end{figure}
+\newline
+\\The Sudoku board is represented by 81 textboxes, where each 3 by 3 sub square uses a different background color in order to be distinguished from each other.  Moreover, four push buttons are used to achieve the program’s functionality. These buttons are called random, solve, verify and clear. Figure \ref{fig:board1} illustrates the Sudoku’s GUI at its initial state.
+\newline
+\\The random button creates and displays a random game on the board. This is done by selecting a game from a database of several games. This button is the only one enabled when the application is started. Once a game has been displayed, the remaining buttons get enabled and only the empty cells can be edited. This means, that the hint cells cannot be modified by the user. An example of a random game is depicted at Figure \ref{fig:board2}, where its hint cells are displayed in black.
+\begin{figure}[h!]
+\centering
+\includegraphics[scale = 1.4]{pictures/board2}
+\caption{A random game and its hint cells}
+\label{fig:board2}
+\end{figure}
+\newline
+\\The solve button solves the current game and displays the solution on the board. This is achieved in three main steps:
+\begin{enumerate}
+\item Read the current game from the board and generate a numerical matrix of 81 elements, where the empty cells are substituted by zeros. A validation of the input data is performed in order to avoid sending invalid values to the algorithm. Only integer values from one to nine can be inserted in the cells. 
+\item Execute the Sudoku solver function, \textit{iSudokuALG}, using the numerical matrix as an input.
+\item Retrieve the solution provided by the Sudoku solver function and populate the board. The hint cells remain in black while the solution cells are highlighted in red. Figure \ref{fig:board3} depicts a solution of a game.
+\end{enumerate}
+\begin{figure}[h!]
+\centering
+\includegraphics[scale = 1.4]{pictures/board3}
+\caption{A solved game}
+\label{fig:board3}
+\end{figure}
+The verify button examines the correctness of either a partial game or a complete game. If a partial or a complete game is detected to be incorrect, the program will display a pop-up window with an error message.  Otherwise, a different pop-up window will display a message stating that the game is correct and in case of a partial game, the message will also state the number of remaining empty cells. An example of these type of messages is illustrated at Figure \ref{fig:msgCorrect} and Figure \ref{fig:msgIncorrect}
+\begin{figure}[ht!]
+\label{fig:msgBox}
+\begin{center}
+%
+\subfigure[Correct Game]{%
+\label{fig:msgCorrect}
+\includegraphics[width=0.49\textwidth]{pictures/Popup1}
+}%
+\subfigure[Incorrect Game]{%
+\label{fig:msgIncorrect}
+\includegraphics[width=0.47\textwidth]{pictures/Popup2}
+}
+\end{center}
+\caption{%
+GUI Message Boxes
+}%
+\end{figure}
+\newline
+\\Finally, the clear button implements the simplest functionality as it only clears the board and disables all the buttons except the random one, returning the program to its initial state.
+\subsubsection{Game Database}
+In order to have different games to be solved by the program an Excel database was created. This database includes games of different levels of difficulty, which means that the number of hints varies from game to game. All the games are contained within an Excel worksheet that is read when the GUI is initialized. An extract of the game database can be seen at Figure \ref{fig:excel}.
+\begin{figure}[h!]
+\centering
+\includegraphics[scale = 0.6]{pictures/Excel1}
+\caption{Extract of the Excel game database}
+\label{fig:excel}
+\end{figure}
+\newline
+\\The reading process is performed by means of MATLAB’s built-in function \textit{xlsread}. This function receives as input the name of the Excel file and the worksheet to be read. The output of this function is stored into a cell matrix that later on is used by the random button to select a game. This is represented by
+\begin{verbatim}
+% Read predefined games from the input spreadsheet
+[num, cellMat]= xlsread('sudoku.xls', 'Games');
+\end{verbatim}
+%--------------------------GUI end-----------------------------------
+
 \subsection{An Algorithm for Solving Sudoku Puzzles}
 The algorithm was implemented in MATLAB using direct search and constraint propagation. This constraint propagation was implemented in such a manner that: 
 \begin{itemize}
@@ -119,9 +196,16 @@ Algorithm Exemplification by using a simple example
 \end{figure}
 Figure 1(a) shows a Shidoku puzzle. Figure 1(b) through 1(f) shows how we get to a solution by using our algorithm. In Figure 1(b), the possible assignment, are represented as smaller digits. For example in Figure 1(b) line 1, row 1, we have two possible values to choose from. If a cell contains only one candidate is filled immediately.
 \newline
-\\ In the next section we are presenting some testing results under different puzzles and we will describe how our MATLAB behaves to various situations. 
+\\ In the next section we are presenting some testing results under different puzzles and we will describe how our MATLAB behaves to various situations.
+
 \section{Experimental Results}
 \section{Conclusions}
+Implementing a Sudoku solver in MATLAB allowed us to use many of the tools and built-in functions presented during the Numerical Methods course. For example, the utilization of loops, if-else statements and the manipulation of matrices and vectors. Nonetheless, we also learnt new functions by ourselves in order to enhance the application. For instance, we learnt to design GUIs, use pop-up windows to display messages and also importing data from Excel.
+\newline
+\\Nowadays, there are extensive studies regarding the mathematics of Sudoku as well as many different algorithms to solve the puzzles. Some algorithms are designed to solve the puzzles as quick as possible while some others are designed to solve them as efficiently in terms of computational power and memory. However, finding a suitable algorithm to solve any particular Sudoku game proved to be difficult.
+\newline
+\\The combination of a simple, yet effective algorithm with a graphical user interface allowed us to generate games, solve them and verify the given solutions in a simple and quick way. Additionally, the good communication and coordination among the team members made possible the completion of the project before the established deadline.
+
 \bibliography{mybib}{}
 \bibliographystyle{plain}
 \end{document}
