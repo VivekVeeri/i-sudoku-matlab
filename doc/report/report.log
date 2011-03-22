@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2011.3.19)  22 MAR 2011 10:26
+This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2011.3.19)  22 MAR 2011 15:16
 entering extended mode
 **report.tex
 (C:\edi_local\Dropbox\mdh_s5\matlab\project\svn\doc\report\report.tex
@@ -512,47 +512,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 57--62
  []
 
 
-LaTeX Warning: Citation `jones2008construction' on page 3 undefined on input li
-ne 65.
-
-
-LaTeX Warning: Citation `mantere2007solving' on page 3 undefined on input line 
-65.
-
-
-LaTeX Warning: Citation `mantere2007solving' on page 3 undefined on input line 
-65.
-
-
-LaTeX Warning: Citation `geem2008harmony' on page 3 undefined on input line 65.
-
-
-
-LaTeX Warning: Citation `green2009survey' on page 3 undefined on input line 65.
-
-
-
-LaTeX Warning: Citation `santos2007solving' on page 3 undefined on input line 6
-5.
-
-
-LaTeX Warning: Citation `yue2006sudoku' on page 3 undefined on input line 65.
-
-
-LaTeX Warning: Citation `bartlett2006integer' on page 3 undefined on input line
- 67.
-
-
-LaTeX Warning: Citation `bartlett2006integer' on page 3 undefined on input line
- 67.
-
-
-LaTeX Warning: Citation `norvigsolving' on page 3 undefined on input line 69.
-
-
-LaTeX Warning: Citation `norvigsolving' on page 3 undefined on input line 71.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 63--72
 
  []
@@ -573,11 +532,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 63--72
  []
 
 [3]
-
-LaTeX Warning: Citation `Mathworks:2011:Online' on page 4 undefined on input li
-ne 75.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 75--80
 
  []
@@ -591,12 +545,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 75--80
 File: pictures/board1.png Graphic file (type png)
 
 <use pictures/board1.png>
-
-LaTeX Warning: Reference `fig:board1' on page 5 undefined on input line 90.
-
-
-LaTeX Warning: Reference `fig:board2' on page 5 undefined on input line 92.
-
 <pictures/board2.png, id=25, 159.9576pt x 189.8292pt>
 File: pictures/board2.png Graphic file (type png)
 
@@ -616,24 +564,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 82--101
  []
 
 [5 <C:/edi_local/Dropbox/mdh_s5/matlab/project/svn/doc/report/pictures/board1.p
-ng>]
-
-LaTeX Warning: Reference `fig:board3' on page 6 undefined on input line 104.
-
-<pictures/board3.png, id=30, 154.6578pt x 174.4116pt>
+ng>] <pictures/board3.png, id=30, 154.6578pt x 174.4116pt>
 File: pictures/board3.png Graphic file (type png)
 
 <use pictures/board3.png>
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: Reference `fig:msgCorrect' on page 6 undefined on input line 112
-.
-
-
-LaTeX Warning: Reference `fig:msgIncorrect' on page 6 undefined on input line 1
-12.
 
 <pictures/Popup1.png, id=31, 302.12875pt x 136.51pt>
 File: pictures/Popup1.png Graphic file (type png)
@@ -650,9 +586,6 @@ ng>] [7 <C:/edi_local/Dropbox/mdh_s5/matlab/project/svn/doc/report/pictures/boa
 rd3.png> <C:/edi_local/Dropbox/mdh_s5/matlab/project/svn/doc/report/pictures/Po
 pup1.png (PNG copy)> <C:/edi_local/Dropbox/mdh_s5/matlab/project/svn/doc/report
 /pictures/Popup2.png (PNG copy)>]
-
-LaTeX Warning: Reference `fig:excel' on page 8 undefined on input line 133.
-
 <pictures/Excel1.png, id=42, 279.0425pt x 292.09125pt>
 File: pictures/Excel1.png Graphic file (type png)
 
@@ -661,18 +594,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 133--142
 
  []
 
+[8 <C:/edi_local/Dropbox/mdh_s5/matlab/project/svn/doc/report/pictures/Excel1.p
+ng (PNG copy)>]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 151.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 151.
- [8 <C:/edi_local/Dropbox/mdh_s5/matlab/project/svn/doc/report/pictures/Excel1.
-png (PNG copy)>]
-
-LaTeX Warning: Citation `crook2009pencil' on page 9 undefined on input line 163
-.
 
 <pictures/1.png, id=47, 161.85469pt x 136.25906pt>
 File: pictures/1.png Graphic file (type png)
@@ -715,13 +645,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 205--210
 
  []
 
-[9] [10 <C:/edi_local/Dropbox/mdh_s5/matlab/project/svn/doc/report/pictures/1.p
-ng (PNG copy)> <C:/edi_local/Dropbox/mdh_s5/matlab/project/svn/doc/report/pictu
-res/2.png (PNG copy)> <C:/edi_local/Dropbox/mdh_s5/matlab/project/svn/doc/repor
-t/pictures/3.png (PNG copy)> <C:/edi_local/Dropbox/mdh_s5/matlab/project/svn/do
-c/report/pictures/4.png (PNG copy)> <C:/edi_local/Dropbox/mdh_s5/matlab/project
-/svn/doc/report/pictures/5.png (PNG copy)> <C:/edi_local/Dropbox/mdh_s5/matlab/
-project/svn/doc/report/pictures/6.png (PNG copy)>]
+[9]
+Overfull \vbox (108.27254pt too high) has occurred while \output is active []
+
+
+[10 <C:/edi_local/Dropbox/mdh_s5/matlab/project/svn/doc/report/pictures/1.png (
+PNG copy)> <C:/edi_local/Dropbox/mdh_s5/matlab/project/svn/doc/report/pictures/
+2.png (PNG copy)> <C:/edi_local/Dropbox/mdh_s5/matlab/project/svn/doc/report/pi
+ctures/3.png (PNG copy)> <C:/edi_local/Dropbox/mdh_s5/matlab/project/svn/doc/re
+port/pictures/4.png (PNG copy)> <C:/edi_local/Dropbox/mdh_s5/matlab/project/svn
+/doc/report/pictures/5.png (PNG copy)> <C:/edi_local/Dropbox/mdh_s5/matlab/proj
+ect/svn/doc/report/pictures/6.png (PNG copy)>]
 (C:\edi_local\Dropbox\mdh_s5\matlab\project\svn\doc\report\report.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 39--43
 []\OT1/cmr/m/n/12 Mathworks.  Cre-at-ing graph-i-cal user in-ter-faces
@@ -737,12 +671,6 @@ ml,
 (C:\edi_local\Dropbox\mdh_s5\matlab\project\svn\doc\report\report.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
@@ -762,7 +690,7 @@ ublic/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
 onts/cm/cmss12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
 cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.p
 fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on report.pdf (12 pages, 399855 bytes).
+Output written on report.pdf (12 pages, 399381 bytes).
 PDF statistics:
  97 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
