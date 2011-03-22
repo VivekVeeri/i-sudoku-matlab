@@ -116,11 +116,11 @@ The verify button examines the correctness of either a partial game or a complet
 %
 \subfigure[Correct Game]{%
 \label{fig:msgCorrect}
-\includegraphics[width=0.49\textwidth]{pictures/Popup1}
+\includegraphics[width=0.52\textwidth]{pictures/Popup1}
 }%
 \subfigure[Incorrect Game]{%
 \label{fig:msgIncorrect}
-\includegraphics[width=0.47\textwidth]{pictures/Popup2}
+\includegraphics[width=0.49\textwidth]{pictures/Popup2}
 }
 \end{center}
 \caption{%
@@ -138,7 +138,7 @@ In order to have different games to be solved by the program an Excel database w
 \label{fig:excel}
 \end{figure}
 \newline
-\\The reading process is performed by means of MATLAB’s built-in function \textit{xlsread}. This function receives as input the name of the Excel file and the worksheet to be read. The output of this function is stored into a cell matrix that later on is used by the random button to select a game. This is represented by
+\\The reading process is performed by means of MATLAB’s built-in function \textit{xlsread}. This function receives as input the name of the Excel file and the worksheet to be read. The output of this function is stored into a cell matrix that later on is used by the random button to select a game. This function is represented by the following:
 \begin{verbatim}
 % Read predefined games from the input spreadsheet
 [num, cellMat]= xlsread('sudoku.xls', 'Games');
@@ -197,9 +197,14 @@ Algorithm Exemplification by using a simple example
 Figure \ref{fig:first} shows a Shidoku puzzle. Figure \ref{fig:second} through Figure \ref{fig:sixth} shows how we get to a solution by using our algorithm. In Figure \ref{fig:second}, the possible assignment, are represented as smaller digits. Also for example in Figure \ref{fig:second} line 1, row 1, we show that we have two possible values to choose from. If a cell contains only one candidate is filled immediately.
 \newline
 \\ In the next section we are presenting some testing results under different puzzles and we will describe how our MATLAB behaves to various situations.
-
 \section{Experimental Results}
 \subsection{User Interface Testing}
+After developing the user interface, the functionality associated to each GUI component was tested. More specifically, it was verified the absence of run-time errors shown in MATLAB’s command window when the user executes an action. For example, when launching the application or when clicking any of the available buttons, no errors are displayed. Additionally, the program flow was tested to ensure that multiple Sudoku games can be solved without closing and opening the application when a game is finished.
+\newline
+\\In order to verify the correct operation of the \textit{random} and \textit{solve} buttons, it was checked that all of the Sudoku games in the database could be randomly selected and solved correctly. Similarly, the \textit{verify} button was tested by manually entering incorrect numbers and characters in the Sudoku board. The purpose of this test was to verify that the pop-up error messages are displayed when the proposed solution is incorrect. Finally, the \textit{clear} button was verified by checking that all of the cells in the board are cleared when the button is pushed.
+\newline
+\\The only issue found during the verification phase for the GUI was related to MATLAB’s xlsread function when using Microsoft Excel 2010. Apparently this is a well documented problem \footnote{http://www.mathworks.com/matlabcentral/newsreader/view\_thread/287717\#766161} regarding how the latest version of Excel handles COM objects and activeX commands which are used by this function . Nevertheless, the xlsread function works correctly when using previous versions of Excel, like version 2007. 
+
 \subsection{Algorithm}
 \section{Conclusions}
 Implementing a Sudoku solver in MATLAB allowed us to use many of the tools and built-in functions presented during the Numerical Methods course. For example, the utilization of loops, if-else statements and the manipulation of matrices and vectors. Nonetheless, we also learnt new functions by ourselves in order to enhance the application. For instance, we learnt to design GUIs, use pop-up windows to display messages and also importing data from Excel.
