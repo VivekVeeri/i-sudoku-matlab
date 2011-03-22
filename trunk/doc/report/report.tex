@@ -58,17 +58,17 @@ Games and puzzles have been a platform for application of mathematics, artificia
 \newline
 \\Sudoku has led other researchers to some advances in algorithm design and implementation. This work was largely motivated by the interesting mathematical concepts behind it.
 \newline
-\\ This paper describes the development and implementation of a Sudoku solver using MATLAB. The remainder of this paper will cover some research work concerning different solutions for solving Sudoku puzzles, the algorithm and GUI implementation will be covered in Section 3, before concluding the paper in Section 4.
+\\ This paper describes the development of a Sudoku solver using MATLAB. The remainder of this paper will cover some research work concerning different solutions for solving Sudoku puzzles, our algorithm solution and GUI implementation will be covered in Section 3. Before concluding the paper in Section 5, some experimental results will be shown in Section 4.
 \section{Related Work}
-Sudoku puzzles can be viewed as a interesting problem for different fields of mathematics, computer science, artificial intelligence, physics, and others. There are many researchers from these fields who have proposed algorithms for solving Sudoku puzzles. 
+Sudoku puzzles can be viewed as an interesting problem for different fields of mathematics, computer science, artificial intelligence, physics, and others. There are many researchers from these fields who have proposed algorithms for solving Sudoku puzzles. 
 \newline
 \\ In \cite{jones2008construction} the authors are proposing a search based solution by using some heuristic factors in a modified steepest hill ascent. Some researchers, as found in \cite{mantere2007solving}, are suggesting the design of a genetic algorithm by representing the puzzle as a block of chromosomes, more precise as an array of 81 integers. Any crossover appears between the 3x3 grids and any mutations occur only inside the 3x3 grids. From the experiments done in \cite{mantere2007solving} the algorithm based on genetic algorithms performs well though is does not solve all cases. Geem in \cite{geem2008harmony} is proposing a Sudoku solver model based on harmony search that mimics the characteristics of a musician. As mentioned in \cite{green2009survey} the performance of the algorithm is not that good and it solves puzzles in less than 40 seconds and 300 iterations. Santos-Garcia and Palomino are suggesting in \cite{santos2007solving} a method for solving Sudoku puzzles using simple logic with rewriting rules to mimic human intelligence. This method works but, as the author admits, it is not performing well when compared with other techniques. Others like in \cite{yue2006sudoku} are suggesting neural networks by modelling an energy driven quantum (Q'tron) neural network to solve the Sudoku puzzles. 
 \newline
-\\ In \cite{bartlett2006integer}, Barlett and Langville proposes a solution based on binary integer linear programming (BILP). To formulate in a simple way the method, we can say that it uses binary variables to pick a digit for any cell in a Sudoku puzzle. The model in \cite{bartlett2006integer} is implemented also in MATLAB.
+\\ In \cite{bartlett2006integer}, Barlett and Langville are proposing a solution based on binary integer linear programming (BILP). To formulate in a simple way the method, we can say that it uses binary variables to pick a digit for any cell in a Sudoku puzzle. The model in \cite{bartlett2006integer} is implemented also in MATLAB.
 \newline
 \\ In \cite{norvigsolving}, Russell Norvig is suggesting a solution based on backtracking. The algorithm is a combination of constraint propagation and direct search by assigning a value to a square on the grid and then propagating these constraints to other squares.
 \newline
-\\ We have decided to solve the puzzles using a constraint-propagation algorithm as in \cite{norvigsolving} because of the simplicity and algorithm performance as demonstrated by Norvig in his paper. We will present in the next section our own version of the algorithm implemented in Matlab using constraint propagation.
+\\ We have decided to solve the puzzles using a constraint-propagation algorithm as in \cite{norvigsolving} because of the algorithm performance and simplicity, as demonstrated by Norvig in his paper. We will present in the next section our own version of the algorithm implemented in Matlab using constraint propagation.
 \section{Implementation}
 %------------------------GUI start---------------------------------------
 \subsection{Graphical User Interface}
@@ -144,7 +144,7 @@ In order to have different games to be solved by the program an Excel database w
 [num, cellMat]= xlsread('sudoku.xls', 'Games');
 \end{verbatim}
 %--------------------------GUI end-----------------------------------
-
+\newpage
 \subsection{An Algorithm for Solving Sudoku Puzzles}
 The algorithm was implemented in MATLAB using direct puzzle search and constraint propagation. The constraint propagation was implemented in such a manner that: 
 \begin{itemize}
@@ -158,14 +158,12 @@ Our MATLAB program has only 4 steps:
 \item Propagate constraints to other square;
 \item If all the cells have more than one possible value we fill in a tentative value for one cell.
 \end{enumerate}
-This algorithm, though it is simplistic, it should perform fairly well  because of the algorithm's nature, as described in \cite{norvigsolving}. This algorithm performs a direct search and constraint propagation from left to right manner.
-\newline
-\\ The algorithm process is performed by $iSudokuALG$ function that receives as input parameter the cell matrix $A$. The output of the function is stored in a matrix. This is represented by
+This algorithm, though it is simplistic, it should perform fairly well  because of the algorithm's nature, as described in \cite{norvigsolving}. The process is performed by $iSudokuALG$ function. This function receives as an input parameter the cell matrix $A$ and gives as output a solved puzzle in the form of a matrix. This is represented by
 \begin{verbatim}
 % Read predefined games and outputs the solved puzzle
 function [A]= iSudokuALG(A)
 \end{verbatim}
-Also we have implemented a function in order to perform a correctness verification function. This function has as input the cell matrix $A$ which contains the current puzzle. The output of the function is stored in variable $val$ which can take two values: $0$ if the puzzle is correct and $1$ otherwise. We represented the verification function as
+Also we have implemented a function in order to perform a correctness verification function. This function has as input the cell matrix $A$ which contains the current puzzle. The output of the function is stored in variable $val$ which can have two values: $0$ if the puzzle is correct and $1$ otherwise. We represented the verification function as
 \begin{verbatim}
 % Puzzle verification function
 function [val]=verific(A)
@@ -204,9 +202,8 @@ To see how our program works, we will use a simpler 4-by-4 grid with 2-by-2 bloc
 The algorithm for solving a simple Shidoku puzzle 
 }%
 \end{figure}
-Figure \ref{fig:first} shows a Shidoku puzzle. Figure \ref{fig:second} through Figure \ref{fig:sixth} shows how we get to a solution by using our algorithm. In Figure \ref{fig:second}, the possible assignment, are represented as smaller digits. Also for example in Figure \ref{fig:second} line 1, row 1, we show that we have two possible values to choose from. If a cell contains only one candidate is filled immediately.
+Figure \ref{fig:first} shows a Shidoku puzzle. Figure \ref{fig:second} through Figure \ref{fig:sixth} shows how we get to a solution by using our algorithm. In Figure \ref{fig:second}, the possible assignment, are represented as smaller digits. Also for example in Figure \ref{fig:second} line 1, row 1, we show that we have two possible values to choose from. If a cell contains only one candidate it is filled immediately.
 \newline
-\\ In the next section we are presenting some testing results under different puzzles and we will describe how our MATLAB behaves to various situations.
 \section{Experimental Results}
 In this section we are presenting some experimental results using different input puzzles and we will describe how our MATLAB implementation behaves to various situations.
 \subsection{User Interface Testing}
@@ -218,7 +215,7 @@ After developing the user interface, the functionality associated to each GUI co
 \subsection{Algorithm Testing}
 All the algorithm source code was compiled and build using Matlab R2007a and is available online\footnote{http://goo.gl/96pCS}. The test system was a HP G7035EA laptop with 1.86 GHz Celeron Processor, 1 GB RAM and Windows XP as operating system.
 \newline
-\\ In order to verify and test our algorithm we have implemented some additional parameters to show some means of analysis. This parameters are $t_e$ (algorithm's execution time), $sq_{empty}$ (number of empty cells in a puzzle) and $s_i$ (steps or iterations done by the algorithm, meaning that one iteration starts when the solver begins the puzzle from the first cell and finishes when the last cell is computed). 
+\\ In order to verify and test our algorithm we have defined some test parameters. This parameters are $t_e$ (algorithm's execution time in seconds), $sq_{empty}$ (number of empty cells in a puzzle) and $s_i$ (steps or iterations done by the algorithm, meaning that one iteration starts when the solver begins the puzzle from the first cell and finishes when the last cell is computed). 
 \begin{figure}[h!]
 \centering
 \includegraphics[scale = 0.37]{pictures/ts.jpg}
