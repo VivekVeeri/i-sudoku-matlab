@@ -1,5 +1,6 @@
 function [A]= iSudokuALG(A)
 clc;
+tic;
 [flag1]=verific(A);
 if flag1==0 fprintf('The matrix is correct.\n')
 
@@ -92,7 +93,8 @@ if flag1==0 fprintf('The matrix is correct.\n')
     end           
     else fprintf('The matrix is NOT correct.\n')
 end
-
+time=toc;
+fprintf
        
             
     
