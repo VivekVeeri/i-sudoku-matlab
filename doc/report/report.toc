@@ -9,3 +9,6 @@
 \contentsline {subsection}{\numberline {4.1}User Interface Testing}{11}
 \contentsline {subsection}{\numberline {4.2}Algorithm Testing}{12}
 \contentsline {section}{\numberline {5}Conclusions}{13}
+\contentsline {section}{\numberline {A}GUI Source Code}{14}
+\contentsline {section}{\numberline {B}Puzzle Verification Function Source Code}{20}
+\contentsline {section}{\numberline {C}Puzzle Solver Alghorithm Source Code}{22}
