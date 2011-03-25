@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2011.3.19)  22 MAR 2011 19:15
+This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2011.3.19)  25 MAR 2011 19:18
 entering extended mode
 **report.tex
 (C:\edi_local\Dropbox\mdh_s5\matlab\project\svn\doc\report\report.tex
@@ -657,49 +657,94 @@ Underfull \hbox (badness 10000) in paragraph at lines 210--215
 
  []
 
-<pictures/ts.jpg, id=61, 853.1875pt x 682.55pt>
-File: pictures/ts.jpg Graphic file (type jpg)
- <use pictures/ts.jpg>
-Underfull \hbox (badness 10000) in paragraph at lines 216--226
+
+Underfull \hbox (badness 10000) in paragraph at lines 216--240
 
  []
 
-[11]
-Underfull \hbox (badness 10000) in paragraph at lines 227--232
+[11] [12]
+Underfull \hbox (badness 10000) in paragraph at lines 242--247
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 227--232
+Underfull \hbox (badness 10000) in paragraph at lines 242--247
 
  []
 
-[12 <C:/edi_local/Dropbox/mdh_s5/matlab/project/svn/doc/report/pictures/ts.jpg>
-] (C:\edi_local\Dropbox\mdh_s5\matlab\project\svn\doc\report\report.bbl
 [13]
+Overfull \hbox (3.74657pt too wide) in paragraph at lines 527--527
+[]\OT1/cmtt/m/n/10 % iSudoku solver. The user interface consists of 81 text box
+es to represent[] 
+ []
+
+[14] [15]
+Overfull \hbox (3.74657pt too wide) in paragraph at lines 527--527
+[]\OT1/cmtt/m/n/10 % This button is in charge of solving the sudoku game displa
+yed on the user[] 
+ []
+
+[16]
+Overfull \hbox (3.74657pt too wide) in paragraph at lines 527--527
+[]                    \OT1/cmtt/m/n/10 cValue ''', ''ForegroundColor'', [' num2
+str([1 0 0])...[] 
+ []
+
+
+Overfull \hbox (3.74657pt too wide) in paragraph at lines 527--527
+[]\OT1/cmtt/m/n/10 % This button verifies that the solution (partial or complet
+e) displayed on[] 
+ []
+
+
+Overfull \hbox (3.74657pt too wide) in paragraph at lines 527--527
+[]\OT1/cmtt/m/n/10 % the board is correct. If it is correct, a pop-up window wi
+ll display that[] 
+ []
+
+[17] [18]
+Overfull \hbox (8.99652pt too wide) in paragraph at lines 527--527
+[]                \OT1/cmtt/m/n/10 msg = ['Non numeric value found at row: ' nu
+m2str(rowInd)...[] 
+ []
+
+[19] [20] [21]
+Overfull \hbox (3.74657pt too wide) in paragraph at lines 706--706
+[]               \OT1/cmtt/m/n/10 fprintf('Value %d in A(%d,%d)--singleton.\n',
+ B(i,j), i, j);[] 
+ []
+
+[22]
+Overfull \hbox (14.24648pt too wide) in paragraph at lines 706--706
+[]                            \OT1/cmtt/m/n/10 fprintf('Value %d in A(%d,%d).\n
+', B(x,y), x, y);[] 
+ []
+
+[23] [24] (C:\edi_local\Dropbox\mdh_s5\matlab\project\svn\doc\report\report.bbl
+
 Underfull \hbox (badness 10000) in paragraph at lines 39--43
-[]\OT1/cmr/m/n/12 Mathworks.  Cre-at-ing graph-i-cal user in-ter-faces
+[]\OT1/cmr/m/n/10 Mathworks.  Cre-at-ing graph-i-cal user in-ter-faces
  []
 
 
-Overfull \hbox (6.0231pt too wide) in paragraph at lines 39--43
-\OT1/cmr/m/n/12 http://www.mathworks.com/help/techdoc/creating[]guis/bqz79mu.ht
-ml,
+Underfull \hbox (badness 10000) in paragraph at lines 39--43
+\OT1/cmr/m/n/10 http://www.mathworks.com/help/techdoc/creating[]guis/bqz79mu.ht
+ml, March
  []
 
-) [14] (C:\edi_local\Dropbox\mdh_s5\matlab\project\svn\doc\report\report.aux)
+) [25] (C:\edi_local\Dropbox\mdh_s5\matlab\project\svn\doc\report\report.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 4760 strings out of 494019
- 63825 string characters out of 3146441
- 158996 words of memory out of 3000000
- 7988 multiletter control sequences out of 15000+200000
- 11898 words of font info for 43 fonts, out of 3000000 for 9000
+ 4759 strings out of 494019
+ 63788 string characters out of 3146441
+ 161996 words of memory out of 3000000
+ 7987 multiletter control sequences out of 15000+200000
+ 12412 words of font info for 45 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 33i,8n,58p,1365b,322s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 33i,11n,58p,1365b,322s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKT
@@ -709,11 +754,13 @@ nts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
 msfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
 /cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss12.pf
 b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Fi
-les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on report.pdf (14 pages, 470071 bytes).
+ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Fi
+les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on report.pdf (25 pages, 473553 bytes).
 PDF statistics:
- 114 PDF objects out of 1000 (max. 8388607)
+ 156 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 66 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 
