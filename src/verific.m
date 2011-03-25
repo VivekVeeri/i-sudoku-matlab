@@ -1,3 +1,13 @@
+% File: verific.m
+% Description: This file implements the corectness verification
+% function. It has as input the cell matrix A which contains
+% the current puzzle. The output of the function is stored in 
+% variable val which can have two values: 0 if the puzzle is 
+% correct and 1 otherwise.
+% Author(s): Raluca Marinescu, Eduard Enoiu
+% Mail(s): rmu09001@student.mdh.se, eeu09001@student.mdh.se
+% Group number: A-3
+
 function [val]=verific(A)
 
 flag=0;

@@ -1,8 +1,18 @@
+% File: iSudokuALG.m
+% Description: This file impements the algorithm for ISudoku Matlab
+% app. The process is performed by SudokuALG function. This 
+% function receives as an input parameter the cell
+% matrix A and gives as output a solved puzzle in the form of a
+% matrix.
+% Author(s): Raluca Marinescu, Eduard Enoiu
+% Mail(s): rmu09001@student.mdh.se, eeu09001@student.mdh.se
+% Group number: A-3
+
 function [A]= iSudokuALG(A)
 clc;
 tic;
 [flag1]=verific(A);
-if flag1==0 fprintf('The matrix is correct.\n')
+if flag1==0 fprintf('The Sudoku Puzzle is correct.\n')
 
     err_flag=0;
     count_zeros=81;
@@ -35,7 +45,7 @@ if flag1==0 fprintf('The matrix is correct.\n')
                     B(i,j)=0;
                     if length(possible)==1
                         B(i,j)=possible;
-                        fprintf('I put the value %d in A(%d,%d)--singelton.\n', B(i,j), i, j);
+                        fprintf('Value %d in A(%d,%d)--singleton.\n', B(i,j), i, j);
                     end
                 end
             end
@@ -54,7 +64,7 @@ if flag1==0 fprintf('The matrix is correct.\n')
                         flag3=verific(A+B);
                         if flag3==0
                             count2=1;
-                            fprintf('I put the value %d in A(%d,%d).\n', B(x,y), x, y);
+                            fprintf('Value %d in A(%d,%d).\n', B(x,y), x, y);
                             break
                         else
                         B(x,y)=0;
@@ -88,13 +98,13 @@ if flag1==0 fprintf('The matrix is correct.\n')
     %I save my result I chech if it is correct
     A=A+B
     [flag3]=verific(A);
-    if flag3==0 fprintf('The matrix is correct.\n')
-    else fprintf('The matrix is NOT correct.\n')
+    if flag3==0 fprintf('The Sudoku Puzzle is correct.\n')
+    else fprintf('The Sudoku Puzzle is incorrect.\n')
     end           
-    else fprintf('The matrix is NOT correct.\n')
+    else fprintf('The Sudoku Puzzle is incorrect.\n')
 end
 time=toc;
-fprintf('\n\n The time for the alg is: %f', time);
+fprintf('\n\n Execution Time: %f \n', time);
        
             
     
