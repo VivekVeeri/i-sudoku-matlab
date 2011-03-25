@@ -30,7 +30,7 @@ if flag1==0 fprintf('The Sudoku Puzzle is correct.\n')
         
         C=B;
         %I look for the postions where there is a single possible value
-        %and I pot that value in my matrix
+        %and I put that value in the matrix
         for i=1:9
             for j=1:9
                 if (A(i,j)+B(i,j))==0 
@@ -44,14 +44,14 @@ if flag1==0 fprintf('The Sudoku Puzzle is correct.\n')
                     end
                     B(i,j)=0;
                     if length(possible)==1
-                        B(i,j)=possible;
-                        fprintf('Value %d in A(%d,%d)--singleton.\n', B(i,j), i, j);
+               B(i,j)=possible;
+               fprintf('Value %d in A(%d,%d)--singleton.\n', B(i,j), i, j);
                     end
                 end
             end
         end
 
-        %if I could not find a single position with a single possible value
+        %If we don't find one position with a single possible value
         %I put a number (correct) in an empty cell
         if C==B
             count2=0;
@@ -80,11 +80,11 @@ if flag1==0 fprintf('The Sudoku Puzzle is correct.\n')
             end
         end
         
-        %if still the matrix is the same then I have an error
+        %if the matrix is the same then I have an error
         if (B==C) err_flag=1;
         end
         
-        %I count the empty cells to know when the I solved the puzzle
+        %I count the empty cells to know when the puzzle is solved
         count_zeros=0;
         for i=1:9
             for j=1:9
@@ -95,7 +95,7 @@ if flag1==0 fprintf('The Sudoku Puzzle is correct.\n')
                  
     end
     
-    %I save my result I chech if it is correct
+    %We save the result; check if it is correct
     A=A+B
     [flag3]=verific(A);
     if flag3==0 fprintf('The Sudoku Puzzle is correct.\n')
